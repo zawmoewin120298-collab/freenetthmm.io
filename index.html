@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="my">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,7 @@
         <div class="music-player">
             <p style="font-size: 12px; color: #0f0; margin-bottom: 10px;">🎵 Background Music</p>
             <audio id="bgMusic" controls autoplay loop>
-                <source src="https://github.com/zawmoewin2025/music/raw/refs/heads/main/K%20Soe%20Lay%20_%20%E1%80%9E%E1%80%AC%E1%80%B8%E1%80%99%E1%80%AD%E1%80%AF%E1%80%80%E1%80%BA%E1%80%94%E1%80%B1%E1%80%AC%E1%80%84%E1%80%BA%E1%80%90%20-%20k%E1%80%85%E1%80%AD%E1%80%AF%E1%80%B8%E1%80%9C%E1%80%B1%E1%80%B8%20_MyanmarSong%20_KSoeLay(MP3_160K).mp3" type="audio/mpeg">
+                <source src="https://github.com/zawmoewin2025/music/raw/main/K%20Soe%20Lay%20_%20%E1%80%9E%E1%80%AC%E1%80%B8%E1%80%99%E1%80%AD%E1%80%AF%E1%80%80%E1%80%BA%E1%80%94%E1%80%B1%E1%80%AC%E1%80%84%E1%80%BA%E1%80%90%20-%20k%E1%80%85%E1%80%AD%E1%80%AF%E1%80%B8%E1%80%9C%E1%80%B1%E1%80%B8%20_MyanmarSong%20_KSoeLay(MP3_160K).mp3" type="audio/mpeg">
             </audio>
         </div>
     </div>
@@ -41,22 +41,22 @@
     <textarea id="vless-link" style="display:none;">vless://e79f1f25-51ee-4916-b705-8f82c30cf8fc@support.zoom.us.cloudinternet.de5.net:8080?path=%2F&security=none&encryption=none&host=support.zoom.us.cloudinternet.de5.net&type=ws&sni=support.zoom.us.cloudinternet.de5.net#VLESS-BYPASS</textarea>
     <textarea id="ais-link" style="display:none;">vless://e79f1f25-51ee-4916-b705-8f82c30cf8fc@www.speedtest.net.opentwitter.de5.net:443?path=%2F&security=tls&encryption=none&insecure=0&host=www.speedtest.net.opentwitter.de5.net&type=ws&allowInsecure=0&sni=www.speedtest.net.opentwitter.de5.net#AIS-Path</textarea>
     <textarea id="true-link" style="display:none;">vless://f2e17b4d-22fd-44a4-90db-40649717be8e@portal-as.ruijienetworks.com.speedtestnet.ggff.net:443?path=%2F%3Fed%3D2560&security=tls&encryption=none&insecure=0&host=portal-as.ruijienetworks.com.speedtestnet.ggff.net&fp=random&type=ws&allowInsecure=0&sni=portal-as.ruijienetworks.com.speedtestnet.ggff.net#TRUE-Path</textarea>
-    <textarea id="starlink-link" style="display:none;">starlink-config-link-here</textarea>
+    <textarea id="starlink-link" style="display:none;">starlink-config-link-goes-here</textarea>
 
     <script>
         function copyConfig(elementId) {
             var copyText = document.getElementById(elementId);
             var toast = document.getElementById("toast");
-            var tempInput = document.createElement("textarea");
-            tempInput.value = copyText.value;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-            document.getElementById("bgMusic").play();
-            toast.style.display = "block";
-            setTimeout(function(){ toast.style.display = "none"; }, 2000);
+            
+            // စာသားကူးယူခြင်း
+            navigator.clipboard.writeText(copyText.value).then(() => {
+                toast.style.display = "block";
+                setTimeout(function(){ toast.style.display = "none"; }, 2000);
+            }).catch(err => {
+                console.error('Error in copying: ', err);
+            });
         }
     </script>
 </body>
 </html>
+
